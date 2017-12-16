@@ -7,7 +7,7 @@ export default class TimerButton extends React.Component {
 
 	render(){
 		return (
-			<button onClick={this.props.handleClick}> Click me!</button>
+			<button onClick={this.props.handleClick}> {this.props.isStarted  ? "Stop Timer": "Start Timer" }</button>
 		)
 	}
 }

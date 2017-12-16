@@ -23,6 +23,10 @@ export default class Timer extends React.Component {
 
 	}
 
+	componenWillUnmount(){
+		clearInterval(this.timer)
+	}
+
 	startTimer(){
 		this.setState(prevState =>({
 			time: prevState.time +=1

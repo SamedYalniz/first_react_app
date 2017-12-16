@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import NameList from "./components/NameList";
 
+import Layout from "./components/Layout";
 
 
 class MyApp extends React.Component{
@@ -9,8 +10,7 @@ class MyApp extends React.Component{
 	render() {
 		return (
 			<div>
-				<NameList number='1'/>
-				<NameList number='2'/>
+				<Layout /> 
 			</div>
 		)
 	};

@@ -7,7 +7,7 @@ export default class Layout extends React.Component {
 	constructor (){
 		super();
 		this.state = {
-			firstName: 'Tomas',
+			firstName: 'Bilal',
 			isTimerMounted: true
 		}
 	}
@@ -15,7 +15,7 @@ export default class Layout extends React.Component {
 
 	changeName() {
 		this.setState({
-			firstName: "Jane"
+			firstName: "Bilal"
 		})
 	}
 

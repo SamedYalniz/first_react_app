@@ -1,5 +1,7 @@
 module.exports = {
-	entry: "./app/js/app.js",
+	entry: 
+	 ['react-hot-loader/patch',
+	"./app/js/app.js"],
 	output: {
 		path: __dirname + '/public',
 		filename: "bundle.js"
@@ -9,10 +11,7 @@ module.exports = {
 			{
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
-				loader: "babel-loader",
-				query: {
-					presets: ["react", "es2015"]
-				}
+				loaders: ["react-hot-loader/webpack", "babel-loader?presets=react,presets[]=es2015"] ,
 			}
 		]
 

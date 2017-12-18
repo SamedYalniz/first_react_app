@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import NameList from "./components/NameList";
 
 import Layout from "./components/Layout";
 
+import names from "../../mock-data";
 
-class MyApp extends React.Component{
+class App extends React.Component{
 
 	render() {
 		return (
 			<div>
-				<Layout /> 
+				<Layout names= {names} /> 
 			</div>
 		)
 	};
@@ -18,7 +18,7 @@ class MyApp extends React.Component{
 
 
 ReactDOM.render(
-	<MyApp/>,
+	<App/>,
 	document.getElementById('app')
 );
 

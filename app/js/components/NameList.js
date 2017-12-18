@@ -1,27 +1,26 @@
-import React from 'react';
-import Welcome from "./Welcome";
+	import React from "react";
 
-export default class NameList extends React.Component {
-		nameMapper(nameArray){
-			return nameArray.map((name, i ) =>
-				<li key={i}>{name}</li>
-			)
+	export default class NameList extends React.Component {
+		constructor(){
+			super();
+			this.state= {
+				names: []
+			}
 		}
 
-		render(){
-			const nameArray = ["Chrisas", "Johans", "Billybobs", "Joeyjoe", "Tomass"];
-			const element = <p> I'm an element </p>
+		componentWillMount(){
+			console.log(this.props.names)
+			this.setState({
+				names: this.props.names
+			})
+		}
+
+		render() {
+			let {names} = this.state
 			return (
-				<div> 
-					<h3> I am number {this.props.number}!  </h3>
-					<Welcome firstName ="Chris" element={element} /> 
-					<ul>
-		 				{this.nameMapper(nameArray)}
-					</ul>
-					<Welcome thisfirstName= "Jane" lastName="Doeese" />
+				<div>
+					{names.map((name) => <h3 key={name.id}> <a href="#"> {name.first_name} {name.last_name}</a> </h3> )}
 				</div>
-				)
-		}	
-};
-
-
+			)
+		}
+	}

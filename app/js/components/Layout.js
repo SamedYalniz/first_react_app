@@ -1,23 +1,16 @@
 import React from "react";
-
 import Timer from "./Timer";
-import Button from "./Button";
+import NameList from "./NameList";
 
 export default class Layout extends React.Component {
 	constructor (){
 		super();
 		this.state = {
-			firstName: 'Bilal',
-			isTimerMounted: true
+
 		}
 	}
 
 
-	changeName() {
-		this.setState({
-			firstName: "Bilal"
-		})
-	}
 
 	toggleTimers(){
 		this.setState(prevState =>({
@@ -36,18 +29,8 @@ export default class Layout extends React.Component {
 			<div>
 				<h1> Welcome to my site!</h1>
 				<h2> Happy to have you here :)</h2>
-				<h1> {this.state.firstName}</h1>
-				<Button firstName = {this.state.firstName} changeName = {this.changeName.bind(this)} />
-				
-				{this.state.isTimerMounted ? 
-					<div>
-						<Timer />
-						<Timer />
-						<Timer />
-					</div>
-					: null
-				}
-				<button onClick= {this.toggleTimers.bind(this)}> Toggle Timers </button>
+				<Timer />
+				<NameList names={this.props.names}/>
 			</div>
 		)
 	}
